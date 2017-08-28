@@ -8,7 +8,9 @@ use CodeBot\Message\Text;
 use CodeBot\Message\Audio;
 use CodeBot\Message\Video;
 use CodeBot\SenderRequest;
+use CodeBot\Element\Button;
 use Illuminate\Http\Request;
+use CodeBot\TemplatesMessage\ButtonsTemplate;
 
 class BotController extends Controller
 {
@@ -43,6 +45,11 @@ class BotController extends Controller
 
         $message = new Video($senderId);
         $callSendApi->make($message->message('https://calm-mountain-45407.herokuapp.com/video/video.mp4'));
+
+        $message = new ButtonsTemplate($senderId);
+        $message->add(new Button('web_url', 'Code.Education', 'https://code.education/'));
+        $message->add(new Button('web_url', 'Google', 'https://www.google.com.br/'));
+        $callSendApi->make($message->message('Que tal testarmos a abertura de um site?'));
 
     	return '';
 
