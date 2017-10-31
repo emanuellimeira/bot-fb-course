@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "55b2362061b63001a0ce20bde9a02016",
+    "content-hash": "6917cb3004db936dd8864d2be5454e96",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -108,16 +108,16 @@
         },
         {
             "name": "emanuellimeira/facebook-bot-sdk",
-            "version": "dev-master",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/emanuellimeira/facebook-bot-sdk.git",
-                "reference": "90a893cbdb6c224aca13350ea1a545f7ccebc392"
+                "reference": "dc94480ef5f01502e2b23bb92d849bb9132ae8fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/emanuellimeira/facebook-bot-sdk/zipball/90a893cbdb6c224aca13350ea1a545f7ccebc392",
-                "reference": "90a893cbdb6c224aca13350ea1a545f7ccebc392",
+                "url": "https://api.github.com/repos/emanuellimeira/facebook-bot-sdk/zipball/dc94480ef5f01502e2b23bb92d849bb9132ae8fe",
+                "reference": "dc94480ef5f01502e2b23bb92d849bb9132ae8fe",
                 "shasum": ""
             },
             "require": {
@@ -140,7 +140,7 @@
                     "email": "emanuellimeira@gmail.com"
                 }
             ],
-            "time": "2017-10-31T10:40:38+00:00"
+            "time": "2017-10-31T14:03:30+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -3632,9 +3632,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "emanuellimeira/facebook-bot-sdk": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

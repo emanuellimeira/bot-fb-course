@@ -2,15 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use CodeBot\WebHook;
-use CodeBot\Message\File;
-use CodeBot\Message\Text;
+use CodeBot\CallSendApi;
 use CodeBot\Message\Audio;
+use CodeBot\Message\File;
+use CodeBot\Message\Image;
 use CodeBot\Message\Video;
 use CodeBot\SenderRequest;
 use CodeBot\Element\Button;
-use Illuminate\Http\Request;
+use CodeBot\Element\Product;
 use CodeBot\TemplatesMessage\ButtonsTemplate;
+use CodeBot\TemplatesMessage\ListTemplate;
+use CodeBot\TemplatesMessage\GenericTemplate;
+use CodeBot\WebHook;
+use CodeBot\Message\Text;
+use Illuminate\Http\Request;
 
 class BotController extends Controller
 {
@@ -50,6 +55,17 @@ class BotController extends Controller
         $message->add(new Button('web_url', 'Code.Education', 'https://code.education/'));
         $message->add(new Button('web_url', 'Google', 'https://www.google.com.br/'));
         $callSendApi->make($message->message('Que tal testarmos a abertura de um site?'));
+
+        $button = new Button('web_url', null, 'https://angular.io/');
+        $product = new Product('Produto 1', 'https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAqfAAAAJDQwZWJiNTdkLThiYjUtNGQ2YS1iMzJjLTRiMmQ5YjZiMDNiNw.png', 'Curso de angular', $button);
+
+        $button = new Button('web_url', null, 'http://www.php.net/');
+        $product2 = new Product('Produto 2', 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png', 'Curso de PHP', $button);
+
+        $template = new ListTemplate($senderId);
+        $template->add($product);
+        $template->add($product2);
+        $actual = $template->message('qwe');
 
     	return '';
 
